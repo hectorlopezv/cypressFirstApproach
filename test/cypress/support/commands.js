@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add("LoginUser", function(username, password, elemento) {
+  cy.get("#email1").type(username);
+  cy.get("#password1").type(password);
+  cy.contains(elemento).click();
+  cy.wait(3000);
+});
+Cypress.Commands.add("AddUser", function(
+  nombre,
+  company,
+  email,
+  password,
+  element
+) {
+    cy.contains("Crear una cuenta").click();
+    cy.get("#name").type(nombre);
+    cy.get("#title").type(company);
+    cy.get("#email2").type(email);
+    cy.get("#password2").type(password);
+    cy.contains(element).click();
+   
+});

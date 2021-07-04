@@ -14,11 +14,13 @@
     "test:server": "pushstate-server -d ./dist",
     "test:init": "npm run build:test && npm run test:server",
     "test:dev": "cypress open --project ./test",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "test:clean": "cd build && node clean-test-db.js"
   },
   "dependencies": {
     "@firebase/app": "^0.6.28",
     "firebase": "^8.7.0",
+    "firebase-admin": "^8.11.0",
     "moment": "^2.22.1",
     "pushstate-server": "^3.1.0",
     "vue": "^2.5.2",
